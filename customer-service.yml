@@ -3,7 +3,7 @@ spring:
     name: customer-service
   data:
     mongodb:
-      uri: mongodb://mongo:27017/customerdb
+      uri: mongodb+srv://xaleons72_db_user:YKJLPRL4giDOswys@cluster0.bst1l3t.mongodb.net/customerDB?retryWrites=true&w=majority&appName=Cluster0
 eureka:
   client:
     service-url:
