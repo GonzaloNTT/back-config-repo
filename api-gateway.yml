@@ -1,0 +1,22 @@
+server:
+  port: 8080   # El puerto del API Gateway
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    config:
+      uri: http://config-server:8888
+      fail-fast: true
+
+    gateway:
+      discovery:
+        locator:
+          enabled: true                
+          lower-case-service-id: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
