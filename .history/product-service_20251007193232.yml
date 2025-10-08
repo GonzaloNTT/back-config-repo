@@ -1,9 +1,9 @@
 spring:
   application:
-    name: customer-service
+    name: product-service
   data:
     mongodb:
-      uri: mongodb+srv://xaleons72_db_user:YKJLPRL4giDOswys@cluster0.bst1l3t.mongodb.net/customerDB?retryWrites=true&w=majority&appName=Cluster0
+      uri: mongodb+srv://xaleons72_db_user:YKJLPRL4giDOswys@cluster0.bst1l3t.mongodb.net/productDB?retryWrites=true&w=majority&appName=Cluster0
     redis:
       host: localhost
       port: 6379
