@@ -10,7 +10,7 @@ spring:
       port: 6379
 
   kafka:
-    bootstrap-servers: kafka:29092
+    bootstrap-servers: localhost:29092
     properties:
       schema.registry.url: http://schema-registry:8081
     producer:
@@ -30,4 +30,4 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://admin:admin@localhost:8761/eureka
+      defaultZone: http://admin:admin@eureka-server:8761/eureka
