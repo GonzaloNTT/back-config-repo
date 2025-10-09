@@ -1,29 +1,29 @@
 spring:
   application:
-    name: customer-service
+    name: operation-service
   data:
     mongodb:
-      uri: mongodb+srv://xaleons72_db_user:YKJLPRL4giDOswys@cluster0.bst1l3t.mongodb.net/customerDB?retryWrites=true&w=majority&appName=Cluster0
+      uri: mongodb+srv://xaleons72_db_user:YKJLPRL4giDOswys@cluster0.bst1l3t.mongodb.net/operationDB?retryWrites=true&w=majority&appName=Cluster0
     redis:
-      host: redis
+      host: localhost
       port: 6379
   kafka:
-    bootstrap-servers: kafka:29092
+    bootstrap-servers: localhost:9092
     properties:
-      schema.registry.url: http://schema-registry:8081
+      schema.registry.url: http://localhost:8081
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
     consumer:
-      group-id: customer-service-group
+      group-id: operation-service-group
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
       properties:
         specific.avro.reader: true
-  cloud:
-    config:
-      uri: http://config-server:8888
+    cloud:
+      config:
+        uri: http://localhost:8888  
 eureka:
   client:
     service-url:
-      defaultZone: http://admin:admin@eureka-server:8761/eureka
+      defaultZone: http://admin:admin@localhost:8761/eureka
