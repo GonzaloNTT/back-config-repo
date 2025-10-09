@@ -1,19 +1,25 @@
 server:
-  port: 8080   # El puerto del API Gateway
+  port: 8080
 
 spring:
   application:
     name: api-gateway
 
+  config:
+    import: optional:configserver:http://config-server:8888
+
   cloud:
     config:
-      uri: http://config-server:8888
       fail-fast: true
+      retry:
+        max-attempts: 10
+        initial-interval: 2000
+        multiplier: 1.5
 
     gateway:
       discovery:
         locator:
-          enabled: true                
+          enabled: true
           lower-case-service-id: true
 
 eureka:
