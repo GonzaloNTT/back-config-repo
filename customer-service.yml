@@ -1,12 +1,14 @@
 spring:
   application:
     name: customer-service
+
   data:
     mongodb:
       uri: mongodb+srv://xaleons72_db_user:YKJLPRL4giDOswys@cluster0.bst1l3t.mongodb.net/customerDB?retryWrites=true&w=majority&appName=Cluster0
     redis:
       host: redis
       port: 6379
+
   kafka:
     bootstrap-servers: kafka:29092
     properties:
@@ -20,9 +22,11 @@ spring:
       value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
       properties:
         specific.avro.reader: true
+
   cloud:
     config:
-      uri: http://config-server:8888
+      uri: http://config-server:8888  # ✅ Ahora correctamente indentado bajo spring.cloud
+
 eureka:
   client:
     service-url:
