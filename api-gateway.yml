@@ -21,6 +21,10 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+      default-filters:
+        - RewritePath=/customer-service/(?<remaining>.*), /api/v1/${remaining}
+        - RewritePath=/operation-service/(?<remaining>.*), /api/v1/${remaining}
+        - RewritePath=/product-service/(?<remaining>.*), /api/v1/${remaining}
 
 eureka:
   client:
