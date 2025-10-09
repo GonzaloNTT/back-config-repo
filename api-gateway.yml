@@ -23,3 +23,14 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka-server:8761/eureka/
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.web.reactive.function.client: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: routes, health, info
