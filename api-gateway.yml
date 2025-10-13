@@ -16,7 +16,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://testxal.auth0.com
+          issuer-uri: https://testxal.auth0.com/
 
 eureka:
   client:
