@@ -11,10 +11,10 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: customer-service
-          uri: lb://customer-service
-          predicates:
-            - Path=/api/v1/**
+          - id: customer-service
+            uri: lb://customer-service
+            predicates:
+              - Path=/api/v1/cliente/**
   security:
     oauth2:
       resourceserver:
