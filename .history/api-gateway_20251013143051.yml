@@ -16,6 +16,7 @@ spring:
         jwt:
           issuer-uri: https://testxal.auth0.com/
 
+
 eureka:
   client:
     service-url:
