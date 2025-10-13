@@ -1,18 +1,18 @@
 spring:
   application:
-    name: product-service
+    name: operation-service
 
   data:
     mongodb:
-      uri: mongodb+srv://xaleons72_db_user:YKJLPRL4giDOswys@cluster0.bst1l3t.mongodb.net/productDB?retryWrites=true&w=majority&appName=Cluster0
+      uri: mongodb+srv://xaleons72_db_user:YKJLPRL4giDOswys@cluster0.bst1l3t.mongodb.net/operationDB?retryWrites=true&w=majority&appName=Cluster0
     redis:
       host: redis
       port: 6379
 
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: localhost:29092
     properties:
-      schema.registry.url: http://localhost:8081
+      schema.registry.url: http://schema-registry:8081
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
@@ -25,7 +25,7 @@ spring:
 
   cloud:
     config:
-      uri: http://localhost:8888
+      uri: http://config-server:8888
 
 eureka:
   client:

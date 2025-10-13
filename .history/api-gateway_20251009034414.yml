@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+  config:
+    import: optional:configserver:http://config-server:8888
+
+  cloud:
+    config:
+      fail-fast: true
+      retry:
+        max-attempts: 10
+        initial-interval: 2000
+        multiplier: 1.5
+
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      default-filters:
+        - RewritePath=/customer-service/(?<remaining>.*), /api/v1/${remaining}
+        - RewritePath=/operation-service/(?<remaining>.*), /api/v1/${remaining}
+        - RewritePath=/product-service/(?<remaining>.*), /api/v1/${remaining}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
